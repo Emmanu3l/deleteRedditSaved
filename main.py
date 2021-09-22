@@ -15,7 +15,7 @@ r = praw.Reddit(client_id=client_id,
                 password=password,
                 user_agent="saved post deleter",
                 username=username)
-print("Deleting posts for u/" + r.user.me())
+print("Deleting posts for u/" + r.user.me().name)
 
 for saved in r.user.me().saved(limit=100):
     if isinstance(saved, praw.models.Submission):
